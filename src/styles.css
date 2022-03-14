@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #19171A;
+    color: #FFFFFF;
+}
+
+@font-face {
+    font-family: 'Roboto/Bold';
+    src: url('assets/fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto/Medium';
+    src: url('assets/fonts/Roboto-Medium.ttf');
+}
+
+h1,h2,h3{
+    font-family: 'Roboto/Bold';
+}
+
+a {
+    padding-top: 5px;
+    font-family: 'Roboto/Bold';
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+p {
+    font-family: 'Roboto/Medium';
+    font-size: 14px;
+    color: #959794;
+    margin: 0;
+}
+
+img.imgLogo{
+    width: 100px;
+}
+
+app-main {
+    width: auto;
+    height: calc(100vh);
+    display: flex;
+}
+
+.backgroudDefault{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}

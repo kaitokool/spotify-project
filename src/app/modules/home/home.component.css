@@ -1,0 +1,19 @@
+.header-Content h2{
+    font-size: 20px;
+}
+
+.list-Content .item-Content{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 300px;
+    margin: 0 10px;
+}
+
+.list-Content .item-Content .item-Image-Content{
+    flex: 6;
+}
+
+.list-Content .item-Content .item-Image-Content{
+    flex: auto;
+}
