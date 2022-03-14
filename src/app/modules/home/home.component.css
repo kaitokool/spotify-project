@@ -1,19 +1,47 @@
 .header-Content h2{
     font-size: 20px;
+    margin-left: 15px;
 }
 
 .list-Content .item-Content{
     display: flex;
     flex-direction: column;
     width: 250px;
-    height: 300px;
-    margin: 0 10px;
+    height: 330px;
+    padding: 20px;
+    margin: 10px 15px;
+    border-radius: 12px;
+    background: #181818;
+    transition: 0.4s all ease-in-out;
+}
+
+.list-Content .item-Content:hover {
+    background: #282828 !important;
+    transform: scale(1.02);
 }
 
 .list-Content .item-Content .item-Image-Content{
     flex: 6;
+    max-width: 225px;
+    max-height: 225px;
 }
 
-.list-Content .item-Content .item-Image-Content{
+.list-Content .item-Content .item-Image-Content img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.list-Content .item-Content .item-Description-content{
     flex: auto;
+    margin-top: 10px;
+}
+
+.list-Content .item-Content .item-Description-content p.title{
+    padding-top: 5px;
+    font-family: 'Roboto/Bold';
+    font-size: 16px;
+    color: #F6F6F6;
+    text-decoration: none;
 }
