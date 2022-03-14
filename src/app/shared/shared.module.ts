@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './main/main.component';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
+import { MenuFriendComponent } from './menu-friend/menu-friend.component';
 
 @NgModule({
   declarations: [
     MainComponent,
-    MenuComponent
+    MenuComponent,
+    MenuFriendComponent
   ],
   imports: [
     CommonModule,

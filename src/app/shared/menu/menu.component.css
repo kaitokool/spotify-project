@@ -17,6 +17,10 @@
     padding-right: 12px;
 }
 
+.menu-Content{
+    padding-right: 15%;
+}
+
 .menu-Content-Item{
     display: flex;
     align-items: center;

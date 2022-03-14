@@ -3,6 +3,45 @@
     margin-left: 15px;
 }
 
+.home-Banner {
+    width: 100%;
+    height: 350px;
+    margin-left: 15px;
+    margin-bottom: 65px;
+    position: relative;
+}
+
+#home-Banner-Link{
+    background: #181818;
+    position: absolute;
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.4s all ease-in-out;
+}
+
+#home-Banner-Link:hover{
+    background: #282828 !important;
+}
+
+.home-Banner-Content{
+    position: absolute;
+    color: #F6F6F6;
+    font-family: 'Roboto/Bold';
+    bottom: calc(7% + 15px);
+    right: calc(1% + 15px);
+}
+
+.home-Banner a img{
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+}
+
+.home-SelectToDay {
+    width: 100%;
+    height: 400px;
+}
+
 .list-Content .item-Content{
     display: flex;
     flex-direction: column;
@@ -44,4 +83,37 @@
     font-size: 16px;
     color: #F6F6F6;
     text-decoration: none;
+}
+
+.list-Content .item-Content .item-Description-content p:nth-child(2){
+    display: block;
+    display: -webkit-box;
+    height: 40px;
+    width: 100%;
+    font-size: 14px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 5px;
+}
+
+.home-TrySomethingElse{
+    width: 100%;
+    height: 400px;
+}
+
+.home-FearutedCharts{
+    width: 100%;
+    height: 400px;
+}
+
+.home-FreshNewMusic{
+    width: 100%;
+    height: 400px;
+}
+
+.home-TrendingNow{
+    width: 100%;
+    height: 400px;
 }
