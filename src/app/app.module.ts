@@ -8,6 +8,8 @@ import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { MusicPlayComponent } from './modules/music-play/music-play.component';
+import { MusicPlayModule } from './modules/music-play/music-play.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     BrowserModule,
     AppRoutingModule,
     HomeModule,
+    MusicPlayModule,
     RouterModule,
     SharedModule,
     NgbModule,

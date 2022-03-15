@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import {Howl, Howler} from 'howler';
 
 @Component({
   selector: 'app-home',
