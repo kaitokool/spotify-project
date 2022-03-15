@@ -55,3 +55,7 @@ app-main {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
+
+.btn{
+    color: #F6F6F6;
+}

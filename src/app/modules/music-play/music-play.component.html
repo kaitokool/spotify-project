@@ -1,1 +1,11 @@
-<p>music-play works!</p>
+<div class="music-main-layout d-flex flex-column">
+    <a href="">{{timerTest}}</a>
+    <div class="d-flex w-100">
+        <button class="btn" id="prevBtn" (click)="prev()">Prev</button>
+        <button *ngIf="playerState" class="btn" id="playBtn" (click)="play()">Play</button>
+        <button *ngIf="!playerState" class="btn" id="pauseBtn" (click)="pause()">Pause</button>
+        <button class="btn" id="nextBtn" (click)="next()">Next</button>
+    </div>
+    <div id="progress">
+    </div>
+</div>
