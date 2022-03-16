@@ -15,6 +15,8 @@ export class MusicPlayComponent implements OnInit {
   durationUpdater: any;
   progress: any;
   seek: any;
+  multipleMusicPlay: any;
+  timeOut:any;
 
   constructor() {}
 
@@ -23,29 +25,75 @@ export class MusicPlayComponent implements OnInit {
   async ngOnInit() {
     this.sound = new Howl({
       src: [
-        'https://www.mboxdrive.com/AmThanh-Dong-ho-dem-nguoc-30s.mp3',
-        'http://vnso-zn-16-tf-mp3-s1-zmp3.zadn.vn/eebb7f691d28f476ad39/5828366249961897055?authen=exp=1647509090~acl=/eebb7f691d28f476ad39/*~hmac=a136f3ac6295c88a38a6c7348ce88a5d',
+        'https://www.mboxdrive.com/AmThanh-Dong-ho-dem-nguoc-30s.mp3'
       ],
       html5: true,
-      autoplay: false,
-      loop: false,
+      preload:true,
       onplay: () => {
+        this.playerState = false;
         this.durationUpdater = setInterval(() => {
           this.UpdateTime(this.sound);
           this.step(this.sound);
-        }, 50);
-        console.log(`play`);
+        }, 10);
       },
       onpause: () => {
-        console.log(`pause`);
       },
       onend: () => {
-        clearInterval(this.timerTest);
         this.playerState = true;
-        this.sound.skip('next');
-        console.log(`end`);
+        clearInterval(this.timerTest);
+        this.playNextMusic();
       },
     });
+  }
+
+  playNextMusic(){
+    this.sound.stop();
+    this.sound = new Howl(
+      {
+        src: 'http://vnso-zn-16-tf-mp3-s1-zmp3.zadn.vn/eebb7f691d28f476ad39/5828366249961897055?authen=exp=1647509090~acl=/eebb7f691d28f476ad39/*~hmac=a136f3ac6295c88a38a6c7348ce88a5d',
+        html5: true,
+        preload:true,
+        onplay: () => {
+          this.playerState = false;
+          this.durationUpdater = setInterval(() => {
+            this.UpdateTime(this.sound);
+            this.step(this.sound);
+          }, 10);
+        },
+        onpause: () => {
+        },
+        onend: () => {
+          this.playerState = true;
+          clearInterval(this.timerTest);
+        },
+      }
+    );
+    this.sound.play();
+  }
+
+  playPrevMusic(){
+    this.sound.stop();
+    this.sound = new Howl(
+      {
+        src: 'https://www.mboxdrive.com/AmThanh-Dong-ho-dem-nguoc-30s.mp3',
+        html5: true,
+        preload:true,
+        onplay: () => {
+          this.playerState = false;
+          this.durationUpdater = setInterval(() => {
+            this.UpdateTime(this.sound);
+            this.step(this.sound);
+          }, 10);
+        },
+        onpause: () => {
+        },
+        onend: () => {
+          this.playerState = true;
+          clearInterval(this.timerTest);
+        },
+      }
+    );
+    this.sound.play();
   }
 
   UpdateTime(x: any) {
@@ -66,24 +114,23 @@ export class MusicPlayComponent implements OnInit {
 
   play() {
     if (this.playerState) {
-      this.sound.play();
       this.playerState = false;
+      this.sound.play();
     }
   }
 
   pause() {
     if (!this.playerState) {
-      this.sound.pause();
       this.playerState = true;
+      this.sound.pause();
     }
   }
 
   prev(){
-    this.sound.skip('prev');
+    this.playPrevMusic();
   }
 
   next(){
-    console.log(this.sound);
-    this.sound.skip('next');
+    this.playNextMusic();
   }
 }
