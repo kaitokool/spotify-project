@@ -1,11 +1,34 @@
 <div class="home-Page pt-5">
     <div class="home-Banner">
-        <a href="" id="home-Banner-Link">
+        <!-- <a href="" id="home-Banner-Link">
             <img src="/assets/images/imageTemp1.jpg" alt="" class="home-BannerContent">
             <p class="home-Banner-Content">
                 Spotify Quang Vu
             </p>
-        </a>
+        </a> -->
+
+        <div class="image-thumnails" id="showSlide">
+            <div class="list-image">
+                <div class="box-image" *ngIf="getIDNext === true">
+                    <img *ngFor="let item of listImage; let i=index" class="imgBoxImage" src={{item.image}} id="{{item.alt}}"
+                    [ngStyle]="{
+                        'left' : item.left + '%',
+                        'opacity': item.opacity,
+                        'transform': item.transform,
+                        'z-index': item.zindex
+                    }">
+                </div>
+    
+                <button id="btn-nextImage" (click)="onClickNextImage()">
+    
+                </button>
+    
+                <button id="btn-prevImage" (click)="onClickPrevImage()">
+    
+                </button>
+                
+            </div>
+        </div>
     </div>
     <div class="home-SelectToDay">
         <div class="header-Content">

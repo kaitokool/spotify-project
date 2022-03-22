@@ -9,7 +9,8 @@ import { timer } from 'rxjs';
 })
 export class MusicPlayComponent implements OnInit {
   playerState: any = true;
-  timerTest: any;
+  timerTestLeft: any = '00:00';
+  timerTestRight: any = '00:00';
   currentTime: any;
   timeTick: any = 0;
   durationUpdater: any;
@@ -17,6 +18,7 @@ export class MusicPlayComponent implements OnInit {
   seek: any;
   multipleMusicPlay: any;
   timeOut:any;
+  animationPause:any = true;
 
   constructor() {}
 
@@ -31,16 +33,19 @@ export class MusicPlayComponent implements OnInit {
       preload:true,
       onplay: () => {
         this.playerState = false;
+        this.animationPause = false;
         this.durationUpdater = setInterval(() => {
           this.UpdateTime(this.sound);
           this.step(this.sound);
         }, 10);
       },
       onpause: () => {
+        this.animationPause = true;
       },
       onend: () => {
         this.playerState = true;
-        clearInterval(this.timerTest);
+        this.animationPause = true;
+        clearInterval(this.timerTestLeft);
         this.playNextMusic();
       },
     });
@@ -55,16 +60,19 @@ export class MusicPlayComponent implements OnInit {
         preload:true,
         onplay: () => {
           this.playerState = false;
+          this.animationPause = false;
           this.durationUpdater = setInterval(() => {
             this.UpdateTime(this.sound);
             this.step(this.sound);
           }, 10);
         },
         onpause: () => {
+          this.animationPause = true;
         },
         onend: () => {
           this.playerState = true;
-          clearInterval(this.timerTest);
+          this.animationPause = true;
+          clearInterval(this.timerTestLeft);
         },
       }
     );
@@ -80,16 +88,19 @@ export class MusicPlayComponent implements OnInit {
         preload:true,
         onplay: () => {
           this.playerState = false;
+          this.animationPause = false;
           this.durationUpdater = setInterval(() => {
             this.UpdateTime(this.sound);
             this.step(this.sound);
           }, 10);
         },
         onpause: () => {
+          this.animationPause = true;
         },
         onend: () => {
           this.playerState = true;
-          clearInterval(this.timerTest);
+          this.animationPause = true;
+          clearInterval(this.timerTestLeft);
         },
       }
     );
@@ -103,7 +114,8 @@ export class MusicPlayComponent implements OnInit {
     let b = x.duration().toFixed();
     let b2 = Math.floor(b / 60);
     let b1 = b - b2 * 60;
-    this.timerTest = a2 + ':' + a1 + ' / ' + b2 + ':' + b1;
+    this.timerTestLeft = a2 + ':' + a1;
+    this.timerTestRight = b2 + ':' + b1;
   }
 
   step(x: any) {

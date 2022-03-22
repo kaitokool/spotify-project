@@ -1,11 +1,28 @@
-<div class="music-main-layout d-flex flex-column">
-    <a href="">{{timerTest}}</a>
-    <div class="d-flex w-100">
-        <button class="btn" id="prevBtn" (click)="prev()">Prev</button>
-        <button *ngIf="playerState" class="btn" id="playBtn" (click)="play()">Play</button>
-        <button *ngIf="!playerState" class="btn" id="pauseBtn" (click)="pause()">Pause</button>
-        <button class="btn" id="nextBtn" (click)="next()">Next</button>
+<div class="music-main-layout d-flex flex-column pt-5">
+    <div class="music-BackGround-Layout d-flex">
+        <img    [ngClass]="animationPause == true ? 'animationPause' : 'animationPlay'" 
+                src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_webp/cover/8/b/e/0/8be0c43a204c819613eec33c57f0dce9.jpg" 
+                class="imgCurrent rounded-circle" alt="">
+        <div class="music-Title-Author d-flex flex-column ms-4">
+            <p class="music-Title">Chill Cùng Rap Việt</p>
+            <p class="music-Author">Bin-z</p>
+        </div>
     </div>
-    <div id="progress">
+    <div class="music-BackGroud-Func">
+        <div class="music-progressBar">
+            <div id="progress">
+            </div>
+        </div>
+        <div class="music-LeftRight-Time">
+            <p class="timerTestLeft">{{timerTestLeft}}</p>
+            <p class="timerTestRight">{{timerTestRight}}</p>
+        </div>
+        <div class="d-flex w-100 justify-content-center align-items-center">
+            <button class="btn" id="prevBtn" (click)="prev()"><i class="bi bi-skip-start"></i></button>
+            <button *ngIf="playerState" class="btn" id="playBtn" (click)="play()"><i class="bi bi-play"></i></button>
+            <button *ngIf="!playerState" class="btn" id="pauseBtn" (click)="pause()"><i class="bi bi-pause-fill"></i></button>
+            <button class="btn" id="nextBtn" (click)="next()"><i class="bi bi-skip-end"></i></button>
+        </div>
     </div>
+    <app-list-music></app-list-music>
 </div>

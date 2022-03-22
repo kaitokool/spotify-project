@@ -11,6 +11,11 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MusicPlayComponent } from './modules/music-play/music-play.component';
 import { MusicPlayModule } from './modules/music-play/music-play.module';
 
+
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
