@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
   playListImage(){
   }
 
-  onClickNextImage(){
+  onClickPrevImage(){
     this.listImage.forEach((value:any, key:any) => {
       if(value.left == 55){
         this.listImage[key].left = 15;
@@ -91,7 +91,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onClickPrevImage(){
+  onClickNextImage(){
     this.listImage.forEach((value:any, key:any) => {
       if(value.left == 25){
         this.listImage[key].left = 15;
